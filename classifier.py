@@ -9,6 +9,7 @@ Ylist=[]
 for directory in os.listdir(path):
 	for file in os.listdir(path+"/"+directory):
 		img=Image.open(path+"/"+directory+"/"+file)
+		print path+"/"+directory+"/"+file
 		featurevector=numpy.array(img).flatten()
 		Xlist.append(featurevector)
 		Ylist.append(directory)
