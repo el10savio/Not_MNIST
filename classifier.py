@@ -2,7 +2,7 @@ from PIL import Image
 import numpy, os
 from sklearn.neighbors import KNeighborsClassifier
 
-path="/home/elton/Dropbox/Programs/Python/ML/MNIST/notMNIST_small"
+path="Dataset Path"
 Xlist=[]
 Ylist=[]
 
@@ -19,7 +19,7 @@ Ytest=Ylist[:20]
 knn = KNeighborsClassifier(n_neighbors=1)
 print('KNN score: %f' % (knn.fit(Xlist, Ylist).score(Xtest, Ytest)))
 
-path_test=raw_input("Path:")
+path_test=raw_input("Image Path:")
 
 print knn.predict(numpy.array(Image.open(path_test)).flatten())
 
